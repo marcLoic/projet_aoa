@@ -66,18 +66,15 @@ int main(int argc, char *argv[])
         init_array(size, x);
         init_array(size, y);
 
-        /* measure repm repetitions */
-        uint64_t t1, t2;
-
         /* kernel call */
         for (i = 0; i < repm; i++)
         {
             /* measure repm repetitions */
-            t1 = rdtsc();
+            const uint64_t t1 = rdtsc();
 
             baseline(size, x, y, square_root);
 
-            t2 = rdtsc();
+            const uint64_t t2 = rdtsc();
 
             tdiff[i][m] = t2 - t1;
         }

@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-O2 -g -Wall
 OPTFLAGS=-O3 -g -Wall
-OBJS_COMMON=kernel.o
+OBJS_COMMON=kernel.o rdtsc.o
 
 all:	check calibrate measure
 
@@ -21,6 +21,9 @@ driver.o: driver.c
 
 kernel.o: kernel.c
 	$(CC) $(OPTFLAGS) -c $< -o $@
+
+rdtsc.o: rdtsc.c
+	$(CC) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_COMMON) driver_check.o driver_calib.o driver.o check calibrate measure
