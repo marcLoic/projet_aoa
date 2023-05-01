@@ -20,7 +20,7 @@ driver.o: driver.c
 	$(CC) $(CFLAGS) -c $<
 
 kernel.o: kernel.c
-	$(CC) $(OPTFLAGS) -D -c $< -o $@
+	$(CC) $(OPTFLAGS) -D $(OPT) -c $< -o $@
 
 clean:
 	rm -rf $(OBJS_COMMON) driver_check.o driver_calib.o driver.o check calibrate measure
