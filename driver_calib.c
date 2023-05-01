@@ -47,8 +47,6 @@ int main(int argc, char *argv[])
 
     unsigned i, m;
 
-    struct timespec ts, te;
-    
     int size = atoi(argv[1]);        /* matrix size */
     int repm = atoi(argv[2]);        /* repetition number */
     int square_root = atoi(argv[3]); /* square root number */
@@ -71,17 +69,15 @@ int main(int argc, char *argv[])
         /* measure repm repetitions */
         uint64_t t1, t2;
 
-        float avg_value = 0;
-
         /* kernel call */
         for (i = 0; i < repm; i++)
         {
             /* measure repm repetitions */
-            uint64_t t1 = rdtsc();
+            t1 = rdtsc();
 
             baseline(size, x, y, square_root);
 
-            uint64_t t2 = rdtsc();
+            t2 = rdtsc();
 
             tdiff[i][m] = t2 - t1;
         }
