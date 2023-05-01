@@ -11,8 +11,8 @@
 
 extern uint64_t rdtsc();
 
-extern void baseline(unsigned n, float x[n][n],
-                     const float y[n][n], double c);
+// extern void baseline(unsigned n, float x[n][n],
+//                      const float y[n][n], double c);
 
 // Initialisation of the two dimensional array
 void init_array(int n, float a[n][n])
