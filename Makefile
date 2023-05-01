@@ -22,5 +22,8 @@ driver.o: driver.c
 kernel.o: kernel.c
 	$(CC) $(OPTFLAGS) -c $< -o $@
 
+rdtsc.o: rdtsc.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -rf $(OBJS_COMMON) driver_check.o driver_calib.o driver.o check calibrate measure
