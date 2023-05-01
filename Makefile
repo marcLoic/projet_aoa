@@ -6,16 +6,16 @@ OBJS_COMMON=kernel.o
 all:	check calibrate measure
 
 check:	$(OBJS_COMMON) driver_check.o
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lm
 calibrate: $(OBJS_COMMON) driver_calib.o
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lm
 measure: $(OBJS_COMMON) driver.o
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ -lm
 
 driver_check.o: driver_check.c
 	$(CC) $(CFLAGS) -D CHECK -c $< -o $@
 driver_calib.o: driver_calib.c
-	$(CC) $(CFLAGS) -D CALIB -c $< -o $@ -lm
+	$(CC) $(CFLAGS) -D CALIB -c $< -o $@ -lme
 driver.o: driver.c
 	$(CC) $(CFLAGS) -c $<
 
