@@ -15,7 +15,7 @@ measure: $(OBJS_COMMON) driver.o
 driver_check.o: driver_check.c
 	$(CC) $(CFLAGS) -D CHECK -c $< -o $@
 driver_calib.o: driver_calib.c
-	$(CC) $(CFLAGS) -D CALIB -c $< -o $@ -lme
+	$(CC) $(CFLAGS) -D CALIB -c $< -o $@
 driver.o: driver.c
 	$(CC) $(CFLAGS) -c $<
 
