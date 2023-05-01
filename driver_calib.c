@@ -3,7 +3,7 @@
 #include "stdio.h"
 #include <stdlib.h>
 #include <time.h>
-#include "kernel.c"
+// #include "kernel.c"
 #include <unistd.h>
 #include <inttypes.h>
 
