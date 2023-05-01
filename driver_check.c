@@ -5,36 +5,36 @@
 extern uint64_t rdtsc();
 
 // TODO: adjust for each kernel
-extern void kernel(unsigned n, float a[n][n], float b[n][n], float c[n][n]);
+// extern void kernel(unsigned n, float a[n][n], float b[n][n], float c[n][n]);
 
-// TODO: adjust for each kernel
-static void init_array(int n, float a[n][n])
-{
-    int i, j;
+// // TODO: adjust for each kernel
+// static void init_array(int n, float a[n][n])
+// {
+//     int i, j;
 
-    for (i = 0; i < n; i++)
-        for (j = 0; j < n; j++)
-            a[i][j] = (float)rand() / RAND_MAX;
-}
+//     for (i = 0; i < n; i++)
+//         for (j = 0; j < n; j++)
+//             a[i][j] = (float)rand() / RAND_MAX;
+// }
 
-// TODO: adjust for each kernel
-static void print_array(int n, float a[n][n], const char *output_file_name)
-{
-    int i, j;
+// // TODO: adjust for each kernel
+// static void print_array(int n, float a[n][n], const char *output_file_name)
+// {
+//     int i, j;
 
-    FILE *fp = fopen(output_file_name, "w");
-    if (fp == NULL)
-    {
-        fprintf(stderr, "Cannot write to %s\n", output_file_name);
-        return;
-    }
+//     FILE *fp = fopen(output_file_name, "w");
+//     if (fp == NULL)
+//     {
+//         fprintf(stderr, "Cannot write to %s\n", output_file_name);
+//         return;
+//     }
 
-    for (i = 0; i < n; i++)
-        for (j = 0; j < n; j++)
-            fprintf(fp, "%f\n", a[i][j]);
+//     for (i = 0; i < n; i++)
+//         for (j = 0; j < n; j++)
+//             fprintf(fp, "%f\n", a[i][j]);
 
-    fclose(fp);
-}
+//     fclose(fp);
+// }
 
 int main(int argc, char *argv[])
 {
