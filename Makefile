@@ -22,7 +22,7 @@ driver.o: driver.c
 kernel.o: kernel.c
 	$(CC) $(OPTFLAGS) -c $< -o $@
 
-rdtsc.o: rdtsc.c
+rdtsc.o: rdtsc
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
