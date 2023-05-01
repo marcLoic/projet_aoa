@@ -1,8 +1,7 @@
-
-
+#include <math.h> // exp
+#include <stdint.h>
 #include "stdio.h"
 #include <stdlib.h>
-#include <stdint.h>
 #include <time.h>
 #include "kernel.c"
 #include <unistd.h>
@@ -104,8 +103,8 @@ int main(int argc, char *argv[])
 
         qsort(tdiff[i], NB_METAS, sizeof(tdiff[i][0]), cmp_uint64);
         
-        printf("MIN %lu RDTSC-cycles\n", tdiff[i][0]);
-        printf("MED %lu RDTSC-cycles\n", tdiff[i][NB_METAS / 2]);
+        printf("MIN %llu RDTSC-cycles\n", tdiff[i][0]);
+        printf("MED %llu RDTSC-cycles\n", tdiff[i][NB_METAS / 2]);
 
         const float stab = (tdiff[i][NB_METAS / 2] - tdiff[i][0]) * 100.0f / tdiff[i][0];
 
@@ -122,7 +121,7 @@ int main(int argc, char *argv[])
             printf("GOOD STABILITY : %.2f %%\n", stab);
         }
 
-        fprintf(fp, "%d,%lu\n", i, tdiff[i][NB_METAS / 2]);
+        fprintf(fp, "%d,%llu\n", i, tdiff[i][NB_METAS / 2]);
     }
 
     fclose(fp);
